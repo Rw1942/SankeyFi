@@ -1,0 +1,6 @@
+name = "sankeyfi"
+compatibility_date = "2026-02-20"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
