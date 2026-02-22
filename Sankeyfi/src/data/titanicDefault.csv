@@ -1,0 +1,892 @@
+Passenger,Class,Sex,Age Group,Survived,Port,Fare Band
+1,3rd Class,Male,Young Adult,Died,Southampton,Budget
+2,1st Class,Female,Adult,Survived,Cherbourg,Premium
+3,3rd Class,Female,Adult,Survived,Southampton,Budget
+4,1st Class,Female,Adult,Survived,Southampton,Premium
+5,3rd Class,Male,Adult,Died,Southampton,Budget
+6,3rd Class,Male,Unknown,Died,Queenstown,Budget
+7,1st Class,Male,Middle Aged,Died,Southampton,Premium
+8,3rd Class,Male,Child,Died,Southampton,Standard
+9,3rd Class,Female,Adult,Survived,Southampton,Standard
+10,2nd Class,Female,Young Adult,Survived,Cherbourg,Premium
+11,3rd Class,Female,Child,Survived,Southampton,Standard
+12,1st Class,Female,Middle Aged,Survived,Southampton,Standard
+13,3rd Class,Male,Young Adult,Died,Southampton,Budget
+14,3rd Class,Male,Adult,Died,Southampton,Premium
+15,3rd Class,Female,Young Adult,Died,Southampton,Budget
+16,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+17,3rd Class,Male,Child,Died,Queenstown,Standard
+18,2nd Class,Male,Unknown,Survived,Southampton,Standard
+19,3rd Class,Female,Adult,Died,Southampton,Standard
+20,3rd Class,Female,Unknown,Survived,Cherbourg,Budget
+21,2nd Class,Male,Adult,Died,Southampton,Standard
+22,2nd Class,Male,Adult,Survived,Southampton,Standard
+23,3rd Class,Female,Young Adult,Survived,Queenstown,Budget
+24,1st Class,Male,Adult,Survived,Southampton,Premium
+25,3rd Class,Female,Child,Died,Southampton,Standard
+26,3rd Class,Female,Adult,Survived,Southampton,Premium
+27,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+28,1st Class,Male,Young Adult,Died,Southampton,Luxury
+29,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+30,3rd Class,Male,Unknown,Died,Southampton,Budget
+31,1st Class,Male,Middle Aged,Died,Cherbourg,Standard
+32,1st Class,Female,Unknown,Survived,Cherbourg,Luxury
+33,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+34,2nd Class,Male,Senior,Died,Southampton,Standard
+35,1st Class,Male,Adult,Died,Cherbourg,Luxury
+36,1st Class,Male,Middle Aged,Died,Southampton,Premium
+37,3rd Class,Male,Unknown,Survived,Cherbourg,Budget
+38,3rd Class,Male,Young Adult,Died,Southampton,Budget
+39,3rd Class,Female,Young Adult,Died,Southampton,Standard
+40,3rd Class,Female,Young Adult,Survived,Cherbourg,Standard
+41,3rd Class,Female,Middle Aged,Died,Southampton,Budget
+42,2nd Class,Female,Adult,Died,Southampton,Standard
+43,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+44,2nd Class,Female,Child,Survived,Cherbourg,Premium
+45,3rd Class,Female,Young Adult,Survived,Queenstown,Budget
+46,3rd Class,Male,Unknown,Died,Southampton,Budget
+47,3rd Class,Male,Unknown,Died,Queenstown,Standard
+48,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+49,3rd Class,Male,Unknown,Died,Cherbourg,Standard
+50,3rd Class,Female,Young Adult,Died,Southampton,Standard
+51,3rd Class,Male,Child,Died,Southampton,Premium
+52,3rd Class,Male,Young Adult,Died,Southampton,Budget
+53,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+54,2nd Class,Female,Adult,Survived,Southampton,Standard
+55,1st Class,Male,Senior,Died,Cherbourg,Premium
+56,1st Class,Male,Unknown,Survived,Southampton,Premium
+57,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+58,3rd Class,Male,Adult,Died,Cherbourg,Budget
+59,2nd Class,Female,Child,Survived,Southampton,Standard
+60,3rd Class,Male,Child,Died,Southampton,Premium
+61,3rd Class,Male,Young Adult,Died,Cherbourg,Budget
+62,1st Class,Female,Adult,Survived,Unknown,Luxury
+63,1st Class,Male,Middle Aged,Died,Southampton,Luxury
+64,3rd Class,Male,Child,Died,Southampton,Standard
+65,1st Class,Male,Unknown,Died,Cherbourg,Standard
+66,3rd Class,Male,Unknown,Survived,Cherbourg,Standard
+67,2nd Class,Female,Adult,Survived,Southampton,Standard
+68,3rd Class,Male,Young Adult,Died,Southampton,Budget
+69,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+70,3rd Class,Male,Adult,Died,Southampton,Budget
+71,2nd Class,Male,Adult,Died,Southampton,Standard
+72,3rd Class,Female,Young Adult,Died,Southampton,Premium
+73,2nd Class,Male,Young Adult,Died,Southampton,Premium
+74,3rd Class,Male,Adult,Died,Cherbourg,Standard
+75,3rd Class,Male,Adult,Survived,Southampton,Premium
+76,3rd Class,Male,Adult,Died,Southampton,Budget
+77,3rd Class,Male,Unknown,Died,Southampton,Budget
+78,3rd Class,Male,Unknown,Died,Southampton,Budget
+79,2nd Class,Male,Child,Survived,Southampton,Standard
+80,3rd Class,Female,Adult,Survived,Southampton,Standard
+81,3rd Class,Male,Young Adult,Died,Southampton,Budget
+82,3rd Class,Male,Adult,Survived,Southampton,Budget
+83,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+84,1st Class,Male,Adult,Died,Southampton,Premium
+85,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+86,3rd Class,Female,Adult,Survived,Southampton,Standard
+87,3rd Class,Male,Young Adult,Died,Southampton,Premium
+88,3rd Class,Male,Unknown,Died,Southampton,Budget
+89,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+90,3rd Class,Male,Young Adult,Died,Southampton,Budget
+91,3rd Class,Male,Adult,Died,Southampton,Budget
+92,3rd Class,Male,Young Adult,Died,Southampton,Budget
+93,1st Class,Male,Middle Aged,Died,Southampton,Premium
+94,3rd Class,Male,Adult,Died,Southampton,Standard
+95,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+96,3rd Class,Male,Unknown,Died,Southampton,Budget
+97,1st Class,Male,Senior,Died,Cherbourg,Premium
+98,1st Class,Male,Young Adult,Survived,Cherbourg,Premium
+99,2nd Class,Female,Adult,Survived,Southampton,Standard
+100,2nd Class,Male,Adult,Died,Southampton,Standard
+101,3rd Class,Female,Adult,Died,Southampton,Budget
+102,3rd Class,Male,Unknown,Died,Southampton,Budget
+103,1st Class,Male,Young Adult,Died,Southampton,Premium
+104,3rd Class,Male,Adult,Died,Southampton,Budget
+105,3rd Class,Male,Adult,Died,Southampton,Budget
+106,3rd Class,Male,Adult,Died,Southampton,Budget
+107,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+108,3rd Class,Male,Unknown,Survived,Southampton,Budget
+109,3rd Class,Male,Adult,Died,Southampton,Budget
+110,3rd Class,Female,Unknown,Survived,Queenstown,Standard
+111,1st Class,Male,Middle Aged,Died,Southampton,Premium
+112,3rd Class,Female,Young Adult,Died,Cherbourg,Standard
+113,3rd Class,Male,Young Adult,Died,Southampton,Budget
+114,3rd Class,Female,Young Adult,Died,Southampton,Budget
+115,3rd Class,Female,Young Adult,Died,Cherbourg,Standard
+116,3rd Class,Male,Young Adult,Died,Southampton,Budget
+117,3rd Class,Male,Senior,Died,Queenstown,Budget
+118,2nd Class,Male,Adult,Died,Southampton,Standard
+119,1st Class,Male,Young Adult,Died,Cherbourg,Luxury
+120,3rd Class,Female,Child,Died,Southampton,Premium
+121,2nd Class,Male,Young Adult,Died,Southampton,Premium
+122,3rd Class,Male,Unknown,Died,Southampton,Budget
+123,2nd Class,Male,Adult,Died,Cherbourg,Premium
+124,2nd Class,Female,Adult,Survived,Southampton,Standard
+125,1st Class,Male,Middle Aged,Died,Southampton,Premium
+126,3rd Class,Male,Child,Survived,Cherbourg,Standard
+127,3rd Class,Male,Unknown,Died,Queenstown,Budget
+128,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+129,3rd Class,Female,Unknown,Survived,Cherbourg,Standard
+130,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+131,3rd Class,Male,Adult,Died,Cherbourg,Budget
+132,3rd Class,Male,Young Adult,Died,Southampton,Budget
+133,3rd Class,Female,Middle Aged,Died,Southampton,Standard
+134,2nd Class,Female,Adult,Survived,Southampton,Standard
+135,2nd Class,Male,Adult,Died,Southampton,Standard
+136,2nd Class,Male,Young Adult,Died,Cherbourg,Standard
+137,1st Class,Female,Young Adult,Survived,Southampton,Standard
+138,1st Class,Male,Adult,Died,Southampton,Premium
+139,3rd Class,Male,Young Adult,Died,Southampton,Budget
+140,1st Class,Male,Young Adult,Died,Cherbourg,Premium
+141,3rd Class,Female,Unknown,Died,Cherbourg,Standard
+142,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+143,3rd Class,Female,Young Adult,Survived,Southampton,Standard
+144,3rd Class,Male,Young Adult,Died,Queenstown,Budget
+145,2nd Class,Male,Young Adult,Died,Southampton,Standard
+146,2nd Class,Male,Young Adult,Died,Southampton,Premium
+147,3rd Class,Male,Adult,Survived,Southampton,Budget
+148,3rd Class,Female,Child,Died,Southampton,Premium
+149,2nd Class,Male,Adult,Died,Southampton,Standard
+150,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+151,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+152,1st Class,Female,Young Adult,Survived,Southampton,Premium
+153,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+154,3rd Class,Male,Middle Aged,Died,Southampton,Standard
+155,3rd Class,Male,Unknown,Died,Southampton,Budget
+156,1st Class,Male,Middle Aged,Died,Cherbourg,Premium
+157,3rd Class,Female,Young Adult,Survived,Queenstown,Budget
+158,3rd Class,Male,Adult,Died,Southampton,Budget
+159,3rd Class,Male,Unknown,Died,Southampton,Budget
+160,3rd Class,Male,Unknown,Died,Southampton,Premium
+161,3rd Class,Male,Middle Aged,Died,Southampton,Standard
+162,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+163,3rd Class,Male,Adult,Died,Southampton,Budget
+164,3rd Class,Male,Young Adult,Died,Southampton,Budget
+165,3rd Class,Male,Child,Died,Southampton,Premium
+166,3rd Class,Male,Child,Survived,Southampton,Standard
+167,1st Class,Female,Unknown,Survived,Southampton,Premium
+168,3rd Class,Female,Middle Aged,Died,Southampton,Standard
+169,1st Class,Male,Unknown,Died,Southampton,Standard
+170,3rd Class,Male,Adult,Died,Southampton,Premium
+171,1st Class,Male,Senior,Died,Southampton,Premium
+172,3rd Class,Male,Child,Died,Queenstown,Standard
+173,3rd Class,Female,Child,Survived,Southampton,Standard
+174,3rd Class,Male,Young Adult,Died,Southampton,Budget
+175,1st Class,Male,Middle Aged,Died,Cherbourg,Premium
+176,3rd Class,Male,Young Adult,Died,Southampton,Budget
+177,3rd Class,Male,Unknown,Died,Southampton,Standard
+178,1st Class,Female,Middle Aged,Died,Cherbourg,Standard
+179,2nd Class,Male,Adult,Died,Southampton,Standard
+180,3rd Class,Male,Adult,Died,Southampton,Budget
+181,3rd Class,Female,Unknown,Died,Southampton,Premium
+182,2nd Class,Male,Unknown,Died,Cherbourg,Standard
+183,3rd Class,Male,Child,Died,Southampton,Premium
+184,2nd Class,Male,Child,Survived,Southampton,Premium
+185,3rd Class,Female,Child,Survived,Southampton,Standard
+186,1st Class,Male,Unknown,Died,Southampton,Premium
+187,3rd Class,Female,Unknown,Survived,Queenstown,Standard
+188,1st Class,Male,Middle Aged,Survived,Southampton,Standard
+189,3rd Class,Male,Middle Aged,Died,Queenstown,Standard
+190,3rd Class,Male,Adult,Died,Southampton,Budget
+191,2nd Class,Female,Adult,Survived,Southampton,Standard
+192,2nd Class,Male,Young Adult,Died,Southampton,Standard
+193,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+194,2nd Class,Male,Child,Survived,Southampton,Standard
+195,1st Class,Female,Middle Aged,Survived,Cherbourg,Standard
+196,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+197,3rd Class,Male,Unknown,Died,Queenstown,Budget
+198,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+199,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+200,2nd Class,Female,Young Adult,Died,Southampton,Standard
+201,3rd Class,Male,Adult,Died,Southampton,Budget
+202,3rd Class,Male,Unknown,Died,Southampton,Premium
+203,3rd Class,Male,Adult,Died,Southampton,Budget
+204,3rd Class,Male,Middle Aged,Died,Cherbourg,Budget
+205,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+206,3rd Class,Female,Child,Died,Southampton,Standard
+207,3rd Class,Male,Adult,Died,Southampton,Standard
+208,3rd Class,Male,Adult,Survived,Cherbourg,Standard
+209,3rd Class,Female,Young Adult,Survived,Queenstown,Budget
+210,1st Class,Male,Middle Aged,Survived,Cherbourg,Premium
+211,3rd Class,Male,Young Adult,Died,Southampton,Budget
+212,2nd Class,Female,Adult,Survived,Southampton,Standard
+213,3rd Class,Male,Young Adult,Died,Southampton,Budget
+214,2nd Class,Male,Adult,Died,Southampton,Standard
+215,3rd Class,Male,Unknown,Died,Queenstown,Budget
+216,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+217,3rd Class,Female,Adult,Survived,Southampton,Budget
+218,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+219,1st Class,Female,Adult,Survived,Cherbourg,Premium
+220,2nd Class,Male,Adult,Died,Southampton,Standard
+221,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+222,2nd Class,Male,Adult,Died,Southampton,Standard
+223,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+224,3rd Class,Male,Unknown,Died,Southampton,Budget
+225,1st Class,Male,Adult,Survived,Southampton,Luxury
+226,3rd Class,Male,Young Adult,Died,Southampton,Budget
+227,2nd Class,Male,Young Adult,Survived,Southampton,Standard
+228,3rd Class,Male,Young Adult,Died,Southampton,Budget
+229,2nd Class,Male,Young Adult,Died,Southampton,Standard
+230,3rd Class,Female,Unknown,Died,Southampton,Standard
+231,1st Class,Female,Adult,Survived,Southampton,Luxury
+232,3rd Class,Male,Adult,Died,Southampton,Budget
+233,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+234,3rd Class,Female,Child,Survived,Southampton,Premium
+235,2nd Class,Male,Young Adult,Died,Southampton,Standard
+236,3rd Class,Female,Unknown,Died,Southampton,Budget
+237,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+238,2nd Class,Female,Child,Survived,Southampton,Standard
+239,2nd Class,Male,Young Adult,Died,Southampton,Standard
+240,2nd Class,Male,Adult,Died,Southampton,Standard
+241,3rd Class,Female,Unknown,Died,Cherbourg,Standard
+242,3rd Class,Female,Unknown,Survived,Queenstown,Standard
+243,2nd Class,Male,Adult,Died,Southampton,Standard
+244,3rd Class,Male,Young Adult,Died,Southampton,Budget
+245,3rd Class,Male,Adult,Died,Cherbourg,Budget
+246,1st Class,Male,Middle Aged,Died,Queenstown,Luxury
+247,3rd Class,Female,Adult,Died,Southampton,Budget
+248,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+249,1st Class,Male,Adult,Survived,Southampton,Premium
+250,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+251,3rd Class,Male,Unknown,Died,Southampton,Budget
+252,3rd Class,Female,Adult,Died,Southampton,Standard
+253,1st Class,Male,Senior,Died,Southampton,Standard
+254,3rd Class,Male,Adult,Died,Southampton,Standard
+255,3rd Class,Female,Middle Aged,Died,Southampton,Standard
+256,3rd Class,Female,Adult,Survived,Cherbourg,Standard
+257,1st Class,Female,Unknown,Survived,Cherbourg,Premium
+258,1st Class,Female,Adult,Survived,Southampton,Luxury
+259,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+260,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+261,3rd Class,Male,Unknown,Died,Queenstown,Budget
+262,3rd Class,Male,Child,Survived,Southampton,Premium
+263,1st Class,Male,Middle Aged,Died,Southampton,Premium
+264,1st Class,Male,Middle Aged,Died,Southampton,Budget
+265,3rd Class,Female,Unknown,Died,Queenstown,Budget
+266,2nd Class,Male,Adult,Died,Southampton,Standard
+267,3rd Class,Male,Young Adult,Died,Southampton,Premium
+268,3rd Class,Male,Adult,Survived,Southampton,Budget
+269,1st Class,Female,Middle Aged,Survived,Southampton,Luxury
+270,1st Class,Female,Adult,Survived,Southampton,Luxury
+271,1st Class,Male,Unknown,Died,Southampton,Premium
+272,3rd Class,Male,Adult,Survived,Southampton,Budget
+273,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+274,1st Class,Male,Adult,Died,Cherbourg,Standard
+275,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+276,1st Class,Female,Senior,Survived,Southampton,Premium
+277,3rd Class,Female,Middle Aged,Died,Southampton,Budget
+278,2nd Class,Male,Unknown,Died,Southampton,Budget
+279,3rd Class,Male,Child,Died,Queenstown,Standard
+280,3rd Class,Female,Adult,Survived,Southampton,Standard
+281,3rd Class,Male,Senior,Died,Queenstown,Budget
+282,3rd Class,Male,Adult,Died,Southampton,Budget
+283,3rd Class,Male,Young Adult,Died,Southampton,Budget
+284,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+285,1st Class,Male,Unknown,Died,Southampton,Standard
+286,3rd Class,Male,Adult,Died,Cherbourg,Budget
+287,3rd Class,Male,Adult,Survived,Southampton,Budget
+288,3rd Class,Male,Young Adult,Died,Southampton,Budget
+289,2nd Class,Male,Middle Aged,Survived,Southampton,Standard
+290,3rd Class,Female,Young Adult,Survived,Queenstown,Budget
+291,1st Class,Female,Adult,Survived,Southampton,Premium
+292,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+293,2nd Class,Male,Adult,Died,Cherbourg,Standard
+294,3rd Class,Female,Young Adult,Died,Southampton,Budget
+295,3rd Class,Male,Young Adult,Died,Southampton,Budget
+296,1st Class,Male,Unknown,Died,Cherbourg,Standard
+297,3rd Class,Male,Young Adult,Died,Cherbourg,Budget
+298,1st Class,Female,Child,Died,Southampton,Luxury
+299,1st Class,Male,Unknown,Survived,Southampton,Premium
+300,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+301,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+302,3rd Class,Male,Unknown,Survived,Queenstown,Standard
+303,3rd Class,Male,Young Adult,Died,Southampton,Budget
+304,2nd Class,Female,Unknown,Survived,Queenstown,Standard
+305,3rd Class,Male,Unknown,Died,Southampton,Budget
+306,1st Class,Male,Child,Survived,Southampton,Luxury
+307,1st Class,Female,Unknown,Survived,Cherbourg,Luxury
+308,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+309,2nd Class,Male,Adult,Died,Cherbourg,Standard
+310,1st Class,Female,Adult,Survived,Cherbourg,Premium
+311,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+312,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+313,2nd Class,Female,Adult,Died,Southampton,Standard
+314,3rd Class,Male,Adult,Died,Southampton,Budget
+315,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+316,3rd Class,Female,Adult,Survived,Southampton,Budget
+317,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+318,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+319,1st Class,Female,Adult,Survived,Southampton,Luxury
+320,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+321,3rd Class,Male,Young Adult,Died,Southampton,Budget
+322,3rd Class,Male,Adult,Died,Southampton,Budget
+323,2nd Class,Female,Adult,Survived,Queenstown,Standard
+324,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+325,3rd Class,Male,Unknown,Died,Southampton,Premium
+326,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+327,3rd Class,Male,Senior,Died,Southampton,Budget
+328,2nd Class,Female,Adult,Survived,Southampton,Standard
+329,3rd Class,Female,Adult,Survived,Southampton,Standard
+330,1st Class,Female,Young Adult,Survived,Cherbourg,Premium
+331,3rd Class,Female,Unknown,Survived,Queenstown,Standard
+332,1st Class,Male,Middle Aged,Died,Southampton,Standard
+333,1st Class,Male,Adult,Died,Southampton,Luxury
+334,3rd Class,Male,Young Adult,Died,Southampton,Standard
+335,1st Class,Female,Unknown,Survived,Southampton,Luxury
+336,3rd Class,Male,Unknown,Died,Southampton,Budget
+337,1st Class,Male,Adult,Died,Southampton,Premium
+338,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+339,3rd Class,Male,Middle Aged,Survived,Southampton,Budget
+340,1st Class,Male,Middle Aged,Died,Southampton,Premium
+341,2nd Class,Male,Child,Survived,Southampton,Standard
+342,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+343,2nd Class,Male,Adult,Died,Southampton,Standard
+344,2nd Class,Male,Adult,Died,Southampton,Standard
+345,2nd Class,Male,Adult,Died,Southampton,Standard
+346,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+347,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+348,3rd Class,Female,Unknown,Survived,Southampton,Standard
+349,3rd Class,Male,Child,Survived,Southampton,Standard
+350,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+351,3rd Class,Male,Young Adult,Died,Southampton,Budget
+352,1st Class,Male,Unknown,Died,Southampton,Premium
+353,3rd Class,Male,Young Adult,Died,Cherbourg,Budget
+354,3rd Class,Male,Adult,Died,Southampton,Standard
+355,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+356,3rd Class,Male,Adult,Died,Southampton,Budget
+357,1st Class,Female,Young Adult,Survived,Southampton,Premium
+358,2nd Class,Female,Adult,Died,Southampton,Standard
+359,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+360,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+361,3rd Class,Male,Middle Aged,Died,Southampton,Standard
+362,2nd Class,Male,Adult,Died,Cherbourg,Standard
+363,3rd Class,Female,Middle Aged,Died,Cherbourg,Standard
+364,3rd Class,Male,Adult,Died,Southampton,Budget
+365,3rd Class,Male,Unknown,Died,Queenstown,Standard
+366,3rd Class,Male,Adult,Died,Southampton,Budget
+367,1st Class,Female,Senior,Survived,Cherbourg,Premium
+368,3rd Class,Female,Unknown,Survived,Cherbourg,Budget
+369,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+370,1st Class,Female,Young Adult,Survived,Cherbourg,Premium
+371,1st Class,Male,Adult,Survived,Cherbourg,Premium
+372,3rd Class,Male,Young Adult,Died,Southampton,Budget
+373,3rd Class,Male,Young Adult,Died,Southampton,Budget
+374,1st Class,Male,Young Adult,Died,Cherbourg,Luxury
+375,3rd Class,Female,Child,Died,Southampton,Standard
+376,1st Class,Female,Unknown,Survived,Cherbourg,Luxury
+377,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+378,1st Class,Male,Adult,Died,Cherbourg,Luxury
+379,3rd Class,Male,Young Adult,Died,Cherbourg,Budget
+380,3rd Class,Male,Young Adult,Died,Southampton,Budget
+381,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+382,3rd Class,Female,Child,Survived,Cherbourg,Standard
+383,3rd Class,Male,Adult,Died,Southampton,Budget
+384,1st Class,Female,Adult,Survived,Southampton,Premium
+385,3rd Class,Male,Unknown,Died,Southampton,Budget
+386,2nd Class,Male,Young Adult,Died,Southampton,Premium
+387,3rd Class,Male,Child,Died,Southampton,Premium
+388,2nd Class,Female,Adult,Survived,Southampton,Standard
+389,3rd Class,Male,Unknown,Died,Queenstown,Budget
+390,2nd Class,Female,Young Adult,Survived,Cherbourg,Standard
+391,1st Class,Male,Adult,Survived,Southampton,Luxury
+392,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+393,3rd Class,Male,Adult,Died,Southampton,Budget
+394,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+395,3rd Class,Female,Young Adult,Survived,Southampton,Standard
+396,3rd Class,Male,Young Adult,Died,Southampton,Budget
+397,3rd Class,Female,Adult,Died,Southampton,Budget
+398,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+399,2nd Class,Male,Young Adult,Died,Southampton,Standard
+400,2nd Class,Female,Adult,Survived,Southampton,Standard
+401,3rd Class,Male,Adult,Survived,Southampton,Budget
+402,3rd Class,Male,Adult,Died,Southampton,Budget
+403,3rd Class,Female,Young Adult,Died,Southampton,Budget
+404,3rd Class,Male,Adult,Died,Southampton,Standard
+405,3rd Class,Female,Young Adult,Died,Southampton,Budget
+406,2nd Class,Male,Adult,Died,Southampton,Standard
+407,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+408,2nd Class,Male,Child,Survived,Southampton,Standard
+409,3rd Class,Male,Young Adult,Died,Southampton,Budget
+410,3rd Class,Female,Unknown,Died,Southampton,Standard
+411,3rd Class,Male,Unknown,Died,Southampton,Budget
+412,3rd Class,Male,Unknown,Died,Queenstown,Budget
+413,1st Class,Female,Adult,Survived,Queenstown,Luxury
+414,2nd Class,Male,Unknown,Died,Southampton,Budget
+415,3rd Class,Male,Middle Aged,Survived,Southampton,Budget
+416,3rd Class,Female,Unknown,Died,Southampton,Budget
+417,2nd Class,Female,Adult,Survived,Southampton,Premium
+418,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+419,2nd Class,Male,Adult,Died,Southampton,Standard
+420,3rd Class,Female,Child,Died,Southampton,Standard
+421,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+422,3rd Class,Male,Young Adult,Died,Queenstown,Budget
+423,3rd Class,Male,Adult,Died,Southampton,Budget
+424,3rd Class,Female,Adult,Died,Southampton,Standard
+425,3rd Class,Male,Young Adult,Died,Southampton,Standard
+426,3rd Class,Male,Unknown,Died,Southampton,Budget
+427,2nd Class,Female,Adult,Survived,Southampton,Standard
+428,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+429,3rd Class,Male,Unknown,Died,Queenstown,Budget
+430,3rd Class,Male,Adult,Survived,Southampton,Budget
+431,1st Class,Male,Adult,Survived,Southampton,Standard
+432,3rd Class,Female,Unknown,Survived,Southampton,Standard
+433,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+434,3rd Class,Male,Young Adult,Died,Southampton,Budget
+435,1st Class,Male,Middle Aged,Died,Southampton,Premium
+436,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+437,3rd Class,Female,Young Adult,Died,Southampton,Premium
+438,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+439,1st Class,Male,Senior,Died,Southampton,Luxury
+440,2nd Class,Male,Adult,Died,Southampton,Standard
+441,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+442,3rd Class,Male,Young Adult,Died,Southampton,Budget
+443,3rd Class,Male,Adult,Died,Southampton,Budget
+444,2nd Class,Female,Adult,Survived,Southampton,Standard
+445,3rd Class,Male,Unknown,Survived,Southampton,Budget
+446,1st Class,Male,Child,Survived,Southampton,Luxury
+447,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+448,1st Class,Male,Adult,Survived,Southampton,Standard
+449,3rd Class,Female,Child,Survived,Cherbourg,Standard
+450,1st Class,Male,Middle Aged,Survived,Southampton,Premium
+451,2nd Class,Male,Adult,Died,Southampton,Standard
+452,3rd Class,Male,Unknown,Died,Southampton,Standard
+453,1st Class,Male,Adult,Died,Cherbourg,Standard
+454,1st Class,Male,Middle Aged,Survived,Cherbourg,Luxury
+455,3rd Class,Male,Unknown,Died,Southampton,Budget
+456,3rd Class,Male,Adult,Survived,Cherbourg,Budget
+457,1st Class,Male,Senior,Died,Southampton,Standard
+458,1st Class,Female,Unknown,Survived,Southampton,Premium
+459,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+460,3rd Class,Male,Unknown,Died,Queenstown,Budget
+461,1st Class,Male,Middle Aged,Survived,Southampton,Standard
+462,3rd Class,Male,Adult,Died,Southampton,Budget
+463,1st Class,Male,Middle Aged,Died,Southampton,Premium
+464,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+465,3rd Class,Male,Unknown,Died,Southampton,Budget
+466,3rd Class,Male,Adult,Died,Southampton,Budget
+467,2nd Class,Male,Unknown,Died,Southampton,Budget
+468,1st Class,Male,Middle Aged,Died,Southampton,Standard
+469,3rd Class,Male,Unknown,Died,Queenstown,Budget
+470,3rd Class,Female,Child,Survived,Cherbourg,Standard
+471,3rd Class,Male,Unknown,Died,Southampton,Budget
+472,3rd Class,Male,Adult,Died,Southampton,Budget
+473,2nd Class,Female,Adult,Survived,Southampton,Standard
+474,2nd Class,Female,Young Adult,Survived,Cherbourg,Standard
+475,3rd Class,Female,Young Adult,Died,Southampton,Budget
+476,1st Class,Male,Unknown,Died,Southampton,Premium
+477,2nd Class,Male,Adult,Died,Southampton,Standard
+478,3rd Class,Male,Adult,Died,Southampton,Budget
+479,3rd Class,Male,Young Adult,Died,Southampton,Budget
+480,3rd Class,Female,Child,Survived,Southampton,Standard
+481,3rd Class,Male,Child,Died,Southampton,Premium
+482,2nd Class,Male,Unknown,Died,Southampton,Budget
+483,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+484,3rd Class,Female,Senior,Survived,Southampton,Budget
+485,1st Class,Male,Adult,Survived,Cherbourg,Luxury
+486,3rd Class,Female,Unknown,Died,Southampton,Standard
+487,1st Class,Female,Adult,Survived,Southampton,Luxury
+488,1st Class,Male,Middle Aged,Died,Cherbourg,Standard
+489,3rd Class,Male,Adult,Died,Southampton,Budget
+490,3rd Class,Male,Child,Survived,Southampton,Standard
+491,3rd Class,Male,Unknown,Died,Southampton,Standard
+492,3rd Class,Male,Young Adult,Died,Southampton,Budget
+493,1st Class,Male,Middle Aged,Died,Southampton,Premium
+494,1st Class,Male,Senior,Died,Cherbourg,Premium
+495,3rd Class,Male,Young Adult,Died,Southampton,Budget
+496,3rd Class,Male,Unknown,Died,Cherbourg,Standard
+497,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+498,3rd Class,Male,Unknown,Died,Southampton,Standard
+499,1st Class,Female,Adult,Died,Southampton,Luxury
+500,3rd Class,Male,Young Adult,Died,Southampton,Budget
+501,3rd Class,Male,Young Adult,Died,Southampton,Budget
+502,3rd Class,Female,Young Adult,Died,Queenstown,Budget
+503,3rd Class,Female,Unknown,Died,Queenstown,Budget
+504,3rd Class,Female,Adult,Died,Southampton,Budget
+505,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+506,1st Class,Male,Young Adult,Died,Cherbourg,Luxury
+507,2nd Class,Female,Adult,Survived,Southampton,Standard
+508,1st Class,Male,Unknown,Survived,Southampton,Standard
+509,3rd Class,Male,Adult,Died,Southampton,Standard
+510,3rd Class,Male,Adult,Survived,Southampton,Premium
+511,3rd Class,Male,Adult,Survived,Queenstown,Budget
+512,3rd Class,Male,Unknown,Died,Southampton,Budget
+513,1st Class,Male,Adult,Survived,Southampton,Standard
+514,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+515,3rd Class,Male,Young Adult,Died,Southampton,Budget
+516,1st Class,Male,Middle Aged,Died,Southampton,Premium
+517,2nd Class,Female,Adult,Survived,Southampton,Standard
+518,3rd Class,Male,Unknown,Died,Queenstown,Standard
+519,2nd Class,Female,Adult,Survived,Southampton,Standard
+520,3rd Class,Male,Adult,Died,Southampton,Budget
+521,1st Class,Female,Adult,Survived,Southampton,Luxury
+522,3rd Class,Male,Young Adult,Died,Southampton,Budget
+523,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+524,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+525,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+526,3rd Class,Male,Middle Aged,Died,Queenstown,Budget
+527,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+528,1st Class,Male,Unknown,Died,Southampton,Luxury
+529,3rd Class,Male,Adult,Died,Southampton,Budget
+530,2nd Class,Male,Young Adult,Died,Southampton,Standard
+531,2nd Class,Female,Child,Survived,Southampton,Standard
+532,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+533,3rd Class,Male,Young Adult,Died,Cherbourg,Budget
+534,3rd Class,Female,Unknown,Survived,Cherbourg,Standard
+535,3rd Class,Female,Adult,Died,Southampton,Budget
+536,2nd Class,Female,Child,Survived,Southampton,Standard
+537,1st Class,Male,Middle Aged,Died,Southampton,Standard
+538,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+539,3rd Class,Male,Unknown,Died,Southampton,Standard
+540,1st Class,Female,Young Adult,Survived,Cherbourg,Premium
+541,1st Class,Female,Adult,Survived,Southampton,Premium
+542,3rd Class,Female,Child,Died,Southampton,Premium
+543,3rd Class,Female,Child,Died,Southampton,Premium
+544,2nd Class,Male,Adult,Survived,Southampton,Standard
+545,1st Class,Male,Middle Aged,Died,Cherbourg,Luxury
+546,1st Class,Male,Senior,Died,Southampton,Standard
+547,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+548,2nd Class,Male,Unknown,Survived,Cherbourg,Standard
+549,3rd Class,Male,Adult,Died,Southampton,Standard
+550,2nd Class,Male,Child,Survived,Southampton,Premium
+551,1st Class,Male,Young Adult,Survived,Cherbourg,Luxury
+552,2nd Class,Male,Adult,Died,Southampton,Standard
+553,3rd Class,Male,Unknown,Died,Queenstown,Budget
+554,3rd Class,Male,Young Adult,Survived,Cherbourg,Budget
+555,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+556,1st Class,Male,Senior,Died,Southampton,Standard
+557,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+558,1st Class,Male,Unknown,Died,Cherbourg,Luxury
+559,1st Class,Female,Adult,Survived,Southampton,Premium
+560,3rd Class,Female,Adult,Survived,Southampton,Standard
+561,3rd Class,Male,Unknown,Died,Queenstown,Budget
+562,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+563,2nd Class,Male,Adult,Died,Southampton,Standard
+564,3rd Class,Male,Unknown,Died,Southampton,Budget
+565,3rd Class,Female,Unknown,Died,Southampton,Budget
+566,3rd Class,Male,Young Adult,Died,Southampton,Standard
+567,3rd Class,Male,Young Adult,Died,Southampton,Budget
+568,3rd Class,Female,Adult,Died,Southampton,Standard
+569,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+570,3rd Class,Male,Adult,Survived,Southampton,Budget
+571,2nd Class,Male,Senior,Survived,Southampton,Standard
+572,1st Class,Female,Middle Aged,Survived,Southampton,Premium
+573,1st Class,Male,Adult,Survived,Southampton,Standard
+574,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+575,3rd Class,Male,Young Adult,Died,Southampton,Budget
+576,3rd Class,Male,Young Adult,Died,Southampton,Standard
+577,2nd Class,Female,Adult,Survived,Southampton,Standard
+578,1st Class,Female,Adult,Survived,Southampton,Premium
+579,3rd Class,Female,Unknown,Died,Cherbourg,Standard
+580,3rd Class,Male,Adult,Survived,Southampton,Budget
+581,2nd Class,Female,Adult,Survived,Southampton,Premium
+582,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+583,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+584,1st Class,Male,Adult,Died,Cherbourg,Premium
+585,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+586,1st Class,Female,Young Adult,Survived,Southampton,Premium
+587,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+588,1st Class,Male,Senior,Survived,Cherbourg,Premium
+589,3rd Class,Male,Young Adult,Died,Southampton,Budget
+590,3rd Class,Male,Unknown,Died,Southampton,Budget
+591,3rd Class,Male,Adult,Died,Southampton,Budget
+592,1st Class,Female,Middle Aged,Survived,Cherbourg,Premium
+593,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+594,3rd Class,Female,Unknown,Died,Queenstown,Budget
+595,2nd Class,Male,Adult,Died,Southampton,Standard
+596,3rd Class,Male,Adult,Died,Southampton,Standard
+597,2nd Class,Female,Unknown,Survived,Southampton,Premium
+598,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+599,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+600,1st Class,Male,Middle Aged,Survived,Cherbourg,Premium
+601,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+602,3rd Class,Male,Unknown,Died,Southampton,Budget
+603,1st Class,Male,Unknown,Died,Southampton,Premium
+604,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+605,1st Class,Male,Adult,Survived,Cherbourg,Standard
+606,3rd Class,Male,Adult,Died,Southampton,Standard
+607,3rd Class,Male,Adult,Died,Southampton,Budget
+608,1st Class,Male,Adult,Survived,Southampton,Premium
+609,2nd Class,Female,Young Adult,Survived,Cherbourg,Premium
+610,1st Class,Female,Middle Aged,Survived,Southampton,Luxury
+611,3rd Class,Female,Adult,Died,Southampton,Premium
+612,3rd Class,Male,Unknown,Died,Southampton,Budget
+613,3rd Class,Female,Unknown,Survived,Queenstown,Standard
+614,3rd Class,Male,Unknown,Died,Queenstown,Budget
+615,3rd Class,Male,Adult,Died,Southampton,Budget
+616,2nd Class,Female,Young Adult,Survived,Southampton,Premium
+617,3rd Class,Male,Adult,Died,Southampton,Standard
+618,3rd Class,Female,Adult,Died,Southampton,Standard
+619,2nd Class,Female,Child,Survived,Southampton,Premium
+620,2nd Class,Male,Adult,Died,Southampton,Standard
+621,3rd Class,Male,Adult,Died,Cherbourg,Standard
+622,1st Class,Male,Middle Aged,Survived,Southampton,Premium
+623,3rd Class,Male,Young Adult,Survived,Cherbourg,Standard
+624,3rd Class,Male,Young Adult,Died,Southampton,Budget
+625,3rd Class,Male,Young Adult,Died,Southampton,Standard
+626,1st Class,Male,Senior,Died,Southampton,Premium
+627,2nd Class,Male,Middle Aged,Died,Queenstown,Standard
+628,1st Class,Female,Young Adult,Survived,Southampton,Premium
+629,3rd Class,Male,Adult,Died,Southampton,Budget
+630,3rd Class,Male,Unknown,Died,Queenstown,Budget
+631,1st Class,Male,Senior,Survived,Southampton,Premium
+632,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+633,1st Class,Male,Adult,Survived,Cherbourg,Premium
+634,1st Class,Male,Unknown,Died,Southampton,Budget
+635,3rd Class,Female,Child,Died,Southampton,Standard
+636,2nd Class,Female,Adult,Survived,Southampton,Standard
+637,3rd Class,Male,Adult,Died,Southampton,Budget
+638,2nd Class,Male,Adult,Died,Southampton,Standard
+639,3rd Class,Female,Middle Aged,Died,Southampton,Premium
+640,3rd Class,Male,Unknown,Died,Southampton,Standard
+641,3rd Class,Male,Young Adult,Died,Southampton,Budget
+642,1st Class,Female,Young Adult,Survived,Cherbourg,Premium
+643,3rd Class,Female,Child,Died,Southampton,Standard
+644,3rd Class,Male,Unknown,Survived,Southampton,Premium
+645,3rd Class,Female,Child,Survived,Cherbourg,Standard
+646,1st Class,Male,Middle Aged,Survived,Cherbourg,Premium
+647,3rd Class,Male,Young Adult,Died,Southampton,Budget
+648,1st Class,Male,Middle Aged,Survived,Cherbourg,Premium
+649,3rd Class,Male,Unknown,Died,Southampton,Budget
+650,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+651,3rd Class,Male,Unknown,Died,Southampton,Budget
+652,2nd Class,Female,Young Adult,Survived,Southampton,Standard
+653,3rd Class,Male,Young Adult,Died,Southampton,Budget
+654,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+655,3rd Class,Female,Young Adult,Died,Queenstown,Budget
+656,2nd Class,Male,Young Adult,Died,Southampton,Premium
+657,3rd Class,Male,Unknown,Died,Southampton,Budget
+658,3rd Class,Female,Adult,Died,Queenstown,Standard
+659,2nd Class,Male,Young Adult,Died,Southampton,Standard
+660,1st Class,Male,Middle Aged,Died,Cherbourg,Luxury
+661,1st Class,Male,Middle Aged,Survived,Southampton,Luxury
+662,3rd Class,Male,Middle Aged,Died,Cherbourg,Budget
+663,1st Class,Male,Middle Aged,Died,Southampton,Standard
+664,3rd Class,Male,Adult,Died,Southampton,Budget
+665,3rd Class,Male,Young Adult,Survived,Southampton,Budget
+666,2nd Class,Male,Adult,Died,Southampton,Premium
+667,2nd Class,Male,Adult,Died,Southampton,Standard
+668,3rd Class,Male,Unknown,Died,Southampton,Budget
+669,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+670,1st Class,Female,Unknown,Survived,Southampton,Premium
+671,2nd Class,Female,Middle Aged,Survived,Southampton,Premium
+672,1st Class,Male,Adult,Died,Southampton,Premium
+673,2nd Class,Male,Senior,Died,Southampton,Standard
+674,2nd Class,Male,Adult,Survived,Southampton,Standard
+675,2nd Class,Male,Unknown,Died,Southampton,Budget
+676,3rd Class,Male,Young Adult,Died,Southampton,Budget
+677,3rd Class,Male,Young Adult,Died,Southampton,Budget
+678,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+679,3rd Class,Female,Middle Aged,Died,Southampton,Premium
+680,1st Class,Male,Adult,Survived,Cherbourg,Luxury
+681,3rd Class,Female,Unknown,Died,Queenstown,Budget
+682,1st Class,Male,Adult,Survived,Cherbourg,Premium
+683,3rd Class,Male,Young Adult,Died,Southampton,Budget
+684,3rd Class,Male,Young Adult,Died,Southampton,Premium
+685,2nd Class,Male,Senior,Died,Southampton,Premium
+686,2nd Class,Male,Adult,Died,Cherbourg,Premium
+687,3rd Class,Male,Young Adult,Died,Southampton,Premium
+688,3rd Class,Male,Young Adult,Died,Southampton,Standard
+689,3rd Class,Male,Young Adult,Died,Southampton,Budget
+690,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+691,1st Class,Male,Adult,Survived,Southampton,Premium
+692,3rd Class,Female,Child,Survived,Cherbourg,Standard
+693,3rd Class,Male,Unknown,Survived,Southampton,Premium
+694,3rd Class,Male,Adult,Died,Cherbourg,Budget
+695,1st Class,Male,Senior,Died,Southampton,Standard
+696,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+697,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+698,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+699,1st Class,Male,Middle Aged,Died,Cherbourg,Luxury
+700,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+701,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+702,1st Class,Male,Adult,Survived,Southampton,Standard
+703,3rd Class,Female,Young Adult,Died,Cherbourg,Standard
+704,3rd Class,Male,Adult,Died,Queenstown,Budget
+705,3rd Class,Male,Adult,Died,Southampton,Budget
+706,2nd Class,Male,Adult,Died,Southampton,Standard
+707,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+708,1st Class,Male,Middle Aged,Survived,Southampton,Standard
+709,1st Class,Female,Young Adult,Survived,Southampton,Luxury
+710,3rd Class,Male,Unknown,Survived,Cherbourg,Standard
+711,1st Class,Female,Young Adult,Survived,Cherbourg,Premium
+712,1st Class,Male,Unknown,Died,Southampton,Standard
+713,1st Class,Male,Middle Aged,Survived,Southampton,Premium
+714,3rd Class,Male,Adult,Died,Southampton,Budget
+715,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+716,3rd Class,Male,Young Adult,Died,Southampton,Budget
+717,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+718,2nd Class,Female,Adult,Survived,Southampton,Standard
+719,3rd Class,Male,Unknown,Died,Queenstown,Standard
+720,3rd Class,Male,Adult,Died,Southampton,Budget
+721,2nd Class,Female,Child,Survived,Southampton,Premium
+722,3rd Class,Male,Young Adult,Died,Southampton,Budget
+723,2nd Class,Male,Adult,Died,Southampton,Standard
+724,2nd Class,Male,Middle Aged,Died,Southampton,Standard
+725,1st Class,Male,Adult,Survived,Southampton,Premium
+726,3rd Class,Male,Young Adult,Died,Southampton,Budget
+727,2nd Class,Female,Adult,Survived,Southampton,Standard
+728,3rd Class,Female,Unknown,Survived,Queenstown,Budget
+729,2nd Class,Male,Adult,Died,Southampton,Standard
+730,3rd Class,Female,Adult,Died,Southampton,Budget
+731,1st Class,Female,Adult,Survived,Southampton,Luxury
+732,3rd Class,Male,Child,Died,Cherbourg,Standard
+733,2nd Class,Male,Unknown,Died,Southampton,Budget
+734,2nd Class,Male,Young Adult,Died,Southampton,Standard
+735,2nd Class,Male,Young Adult,Died,Southampton,Standard
+736,3rd Class,Male,Adult,Died,Southampton,Standard
+737,3rd Class,Female,Middle Aged,Died,Southampton,Premium
+738,1st Class,Male,Adult,Survived,Cherbourg,Luxury
+739,3rd Class,Male,Unknown,Died,Southampton,Budget
+740,3rd Class,Male,Unknown,Died,Southampton,Budget
+741,1st Class,Male,Unknown,Survived,Southampton,Premium
+742,1st Class,Male,Adult,Died,Southampton,Premium
+743,1st Class,Female,Young Adult,Survived,Cherbourg,Luxury
+744,3rd Class,Male,Young Adult,Died,Southampton,Standard
+745,3rd Class,Male,Adult,Survived,Southampton,Budget
+746,1st Class,Male,Senior,Died,Southampton,Premium
+747,3rd Class,Male,Young Adult,Died,Southampton,Standard
+748,2nd Class,Female,Adult,Survived,Southampton,Standard
+749,1st Class,Male,Young Adult,Died,Southampton,Premium
+750,3rd Class,Male,Adult,Died,Queenstown,Budget
+751,2nd Class,Female,Child,Survived,Southampton,Standard
+752,3rd Class,Male,Child,Survived,Southampton,Standard
+753,3rd Class,Male,Adult,Died,Southampton,Budget
+754,3rd Class,Male,Young Adult,Died,Southampton,Budget
+755,2nd Class,Female,Middle Aged,Survived,Southampton,Premium
+756,2nd Class,Male,Child,Survived,Southampton,Standard
+757,3rd Class,Male,Adult,Died,Southampton,Budget
+758,2nd Class,Male,Young Adult,Died,Southampton,Standard
+759,3rd Class,Male,Adult,Died,Southampton,Budget
+760,1st Class,Female,Adult,Survived,Southampton,Luxury
+761,3rd Class,Male,Unknown,Died,Southampton,Standard
+762,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+763,3rd Class,Male,Young Adult,Survived,Cherbourg,Budget
+764,1st Class,Female,Adult,Survived,Southampton,Luxury
+765,3rd Class,Male,Young Adult,Died,Southampton,Budget
+766,1st Class,Female,Middle Aged,Survived,Southampton,Premium
+767,1st Class,Male,Unknown,Died,Cherbourg,Premium
+768,3rd Class,Female,Adult,Died,Queenstown,Budget
+769,3rd Class,Male,Unknown,Died,Queenstown,Standard
+770,3rd Class,Male,Adult,Died,Southampton,Budget
+771,3rd Class,Male,Young Adult,Died,Southampton,Budget
+772,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+773,2nd Class,Female,Middle Aged,Died,Southampton,Standard
+774,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+775,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+776,3rd Class,Male,Young Adult,Died,Southampton,Budget
+777,3rd Class,Male,Unknown,Died,Queenstown,Budget
+778,3rd Class,Female,Child,Survived,Southampton,Standard
+779,3rd Class,Male,Unknown,Died,Queenstown,Budget
+780,1st Class,Female,Middle Aged,Survived,Southampton,Luxury
+781,3rd Class,Female,Young Adult,Survived,Cherbourg,Budget
+782,1st Class,Female,Young Adult,Survived,Southampton,Premium
+783,1st Class,Male,Adult,Died,Southampton,Premium
+784,3rd Class,Male,Unknown,Died,Southampton,Standard
+785,3rd Class,Male,Adult,Died,Southampton,Budget
+786,3rd Class,Male,Adult,Died,Southampton,Budget
+787,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+788,3rd Class,Male,Child,Died,Queenstown,Standard
+789,3rd Class,Male,Child,Survived,Southampton,Standard
+790,1st Class,Male,Middle Aged,Died,Cherbourg,Premium
+791,3rd Class,Male,Unknown,Died,Queenstown,Budget
+792,2nd Class,Male,Young Adult,Died,Southampton,Standard
+793,3rd Class,Female,Unknown,Died,Southampton,Premium
+794,1st Class,Male,Unknown,Died,Cherbourg,Premium
+795,3rd Class,Male,Adult,Died,Southampton,Budget
+796,2nd Class,Male,Adult,Died,Southampton,Standard
+797,1st Class,Female,Middle Aged,Survived,Southampton,Standard
+798,3rd Class,Female,Adult,Survived,Southampton,Budget
+799,3rd Class,Male,Adult,Died,Cherbourg,Budget
+800,3rd Class,Female,Adult,Died,Southampton,Standard
+801,2nd Class,Male,Adult,Died,Southampton,Standard
+802,2nd Class,Female,Adult,Survived,Southampton,Standard
+803,1st Class,Male,Child,Survived,Southampton,Luxury
+804,3rd Class,Male,Child,Survived,Cherbourg,Budget
+805,3rd Class,Male,Adult,Survived,Southampton,Budget
+806,3rd Class,Male,Adult,Died,Southampton,Budget
+807,1st Class,Male,Adult,Died,Southampton,Budget
+808,3rd Class,Female,Young Adult,Died,Southampton,Budget
+809,2nd Class,Male,Adult,Died,Southampton,Standard
+810,1st Class,Female,Adult,Survived,Southampton,Premium
+811,3rd Class,Male,Adult,Died,Southampton,Budget
+812,3rd Class,Male,Adult,Died,Southampton,Standard
+813,2nd Class,Male,Adult,Died,Southampton,Standard
+814,3rd Class,Female,Child,Died,Southampton,Premium
+815,3rd Class,Male,Adult,Died,Southampton,Budget
+816,1st Class,Male,Unknown,Died,Southampton,Budget
+817,3rd Class,Female,Young Adult,Died,Southampton,Budget
+818,2nd Class,Male,Adult,Died,Cherbourg,Premium
+819,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+820,3rd Class,Male,Child,Died,Southampton,Standard
+821,1st Class,Female,Middle Aged,Survived,Southampton,Luxury
+822,3rd Class,Male,Adult,Survived,Southampton,Budget
+823,1st Class,Male,Adult,Died,Southampton,Budget
+824,3rd Class,Female,Adult,Survived,Southampton,Standard
+825,3rd Class,Male,Child,Died,Southampton,Premium
+826,3rd Class,Male,Unknown,Died,Queenstown,Budget
+827,3rd Class,Male,Unknown,Died,Southampton,Premium
+828,2nd Class,Male,Child,Survived,Cherbourg,Premium
+829,3rd Class,Male,Unknown,Survived,Queenstown,Budget
+830,1st Class,Female,Senior,Survived,Unknown,Luxury
+831,3rd Class,Female,Young Adult,Survived,Cherbourg,Standard
+832,2nd Class,Male,Child,Survived,Southampton,Standard
+833,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+834,3rd Class,Male,Young Adult,Died,Southampton,Budget
+835,3rd Class,Male,Young Adult,Died,Southampton,Budget
+836,1st Class,Female,Adult,Survived,Cherbourg,Luxury
+837,3rd Class,Male,Young Adult,Died,Southampton,Budget
+838,3rd Class,Male,Unknown,Died,Southampton,Budget
+839,3rd Class,Male,Adult,Survived,Southampton,Premium
+840,1st Class,Male,Unknown,Survived,Cherbourg,Standard
+841,3rd Class,Male,Young Adult,Died,Southampton,Budget
+842,2nd Class,Male,Young Adult,Died,Southampton,Standard
+843,1st Class,Female,Adult,Survived,Cherbourg,Premium
+844,3rd Class,Male,Adult,Died,Cherbourg,Budget
+845,3rd Class,Male,Young Adult,Died,Southampton,Budget
+846,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+847,3rd Class,Male,Unknown,Died,Southampton,Premium
+848,3rd Class,Male,Adult,Died,Cherbourg,Budget
+849,2nd Class,Male,Adult,Died,Southampton,Premium
+850,1st Class,Female,Unknown,Survived,Cherbourg,Luxury
+851,3rd Class,Male,Child,Died,Southampton,Premium
+852,3rd Class,Male,Senior,Died,Southampton,Budget
+853,3rd Class,Female,Child,Died,Cherbourg,Standard
+854,1st Class,Female,Young Adult,Survived,Southampton,Premium
+855,2nd Class,Female,Middle Aged,Died,Southampton,Standard
+856,3rd Class,Female,Young Adult,Survived,Southampton,Budget
+857,1st Class,Female,Middle Aged,Survived,Southampton,Luxury
+858,1st Class,Male,Middle Aged,Survived,Southampton,Standard
+859,3rd Class,Female,Young Adult,Survived,Cherbourg,Standard
+860,3rd Class,Male,Unknown,Died,Cherbourg,Budget
+861,3rd Class,Male,Middle Aged,Died,Southampton,Standard
+862,2nd Class,Male,Young Adult,Died,Southampton,Standard
+863,1st Class,Female,Middle Aged,Survived,Southampton,Standard
+864,3rd Class,Female,Unknown,Died,Southampton,Premium
+865,2nd Class,Male,Young Adult,Died,Southampton,Standard
+866,2nd Class,Female,Middle Aged,Survived,Southampton,Standard
+867,2nd Class,Female,Adult,Survived,Cherbourg,Standard
+868,1st Class,Male,Adult,Died,Southampton,Premium
+869,3rd Class,Male,Unknown,Died,Southampton,Budget
+870,3rd Class,Male,Child,Survived,Southampton,Standard
+871,3rd Class,Male,Adult,Died,Southampton,Budget
+872,1st Class,Female,Middle Aged,Survived,Southampton,Premium
+873,1st Class,Male,Adult,Died,Southampton,Budget
+874,3rd Class,Male,Middle Aged,Died,Southampton,Budget
+875,2nd Class,Female,Adult,Survived,Cherbourg,Standard
+876,3rd Class,Female,Young Adult,Survived,Cherbourg,Budget
+877,3rd Class,Male,Young Adult,Died,Southampton,Budget
+878,3rd Class,Male,Young Adult,Died,Southampton,Budget
+879,3rd Class,Male,Unknown,Died,Southampton,Budget
+880,1st Class,Female,Middle Aged,Survived,Cherbourg,Luxury
+881,2nd Class,Female,Adult,Survived,Southampton,Standard
+882,3rd Class,Male,Adult,Died,Southampton,Budget
+883,3rd Class,Female,Young Adult,Died,Southampton,Standard
+884,2nd Class,Male,Adult,Died,Southampton,Standard
+885,3rd Class,Male,Adult,Died,Southampton,Budget
+886,3rd Class,Female,Adult,Died,Queenstown,Standard
+887,2nd Class,Male,Adult,Died,Southampton,Standard
+888,1st Class,Female,Young Adult,Survived,Southampton,Premium
+889,3rd Class,Female,Unknown,Died,Southampton,Standard
+890,1st Class,Male,Adult,Survived,Cherbourg,Premium
+891,3rd Class,Male,Adult,Died,Queenstown,Budget

@@ -1,14 +1,12 @@
-# Documentation Index
+# Docs
 
-This folder contains concise, feature-focused notes used during product iteration.
+Short, feature-focused notes used during product development.
 
-## Files
+| File | Covers |
+| --- | --- |
+| [`user-stories-dimension-workflow.md`](user-stories-dimension-workflow.md) | Dimension selection, preview, and reordering |
+| [`user-stories-pre-import-check.md`](user-stories-pre-import-check.md) | CSV import quality checks and status reporting |
+| [`user-stories-flow-through.md`](user-stories-flow-through.md) | Flow-through highlighting and record overlays |
+| [`cloudflare-deployment.md`](cloudflare-deployment.md) | Cloudflare Workers deployment steps |
 
-- `user-stories-dimension-workflow.md` - stories for dimension selection, preview, and ordering UX.
-- `user-stories-pre-import-check.md` - stories for import-time CSV quality checks and status reporting.
-- `user-stories-flow-through.md` - stories for flow-through visualization, node click highlighting, and record overlays.
-- `cloudflare-deployment.md` - deployment steps for Cloudflare Pages/Workers setup.
-
-## Scope
-
-These documents are focused story artifacts, not full product manuals. For setup and end-to-end usage, see the root `README.md`.
+For setup and usage, see the root [`README.md`](../README.md).

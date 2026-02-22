@@ -1,69 +1,65 @@
 # Sankeyfi
 
-Sankeyfi is a fast in-browser Sankey builder powered by DuckDB-Wasm. Everything runs locally in your browser, so you can import data, shape your stages, and inspect record-level flow details without a backend.
+A fast, in-browser Sankey diagram builder powered by DuckDB-Wasm. Everything runs locally -- no backend, no uploads. Import your data, pick your stages, and explore record-level flows right in the browser.
 
-## What You Can Do
+## Features
 
-- Import one or more files (CSV, TSV, TXT, Parquet, or Excel).
+- Import CSV, TSV, TXT, Parquet, or Excel files (multi-sheet supported).
 - Build Sankey links from selected dimensions or from pivoted stage rows.
-- Size flows by row count or by summing a numeric amount column.
-- Choose amount formatting for SUM mode:
-  - `Number (default)`
-  - `USD (rounded to millions)` (for example `$12M`)
-- Reorder dimensions, apply Top N per stage, and optionally show/hide `Other`.
-- Click links or nodes to inspect contributing records.
-- Click a first or last column node to highlight proportional flow-through paths.
+- Size flows by row count or by summing a numeric column.
+- Format amounts as plain numbers or USD rounded to millions (e.g. `$12M`).
+- Reorder dimensions, apply Top N per stage, and toggle an `Other` bucket.
+- Click any link or node to inspect the contributing records.
+- Click a first- or last-column node to highlight proportional flow-through paths.
 
 ## Quick Start
 
-### Requirements
-
-- Node.js 20+ recommended
-- npm
-
-### Run Locally
+**Requirements:** Node.js 20+, npm
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL shown in the terminal (usually `http://localhost:5173`).
+Open the URL shown in the terminal (usually `http://localhost:5173`).
 
 ### Other Scripts
 
-```bash
-npm run build    # type-check + production build
-npm run preview  # preview built app
-npm run lint     # run ESLint
-```
+| Command | What it does |
+| --- | --- |
+| `npm run build` | Type-check + production build |
+| `npm run preview` | Preview the built app locally |
+| `npm run lint` | Run ESLint |
 
 ## Typical Workflow
 
 1. Import a file.
 2. Pick dimensions in the **Dimensions** panel.
-3. In **Values**, choose:
-   - `Count rows` or `Sum column`
-   - amount column (for SUM)
-   - amount data type (for SUM)
-4. (Optional) Enable **Pivot mode** and set pivot columns.
+3. Under **Values**, choose `Count rows` or `Sum column` (plus amount column and data type for SUM).
+4. Optionally enable **Pivot mode** and set pivot columns.
 5. Click **Run Sankey**.
-6. Click links or nodes in the chart to inspect record-level trace data.
-7. Click a node in the first or last column to see its proportional flow highlighted through intermediate stages.
+6. Click links or nodes to drill into record-level trace data.
+7. Click a first- or last-column node to see its proportional flow highlighted across stages.
 
-## Notes and Limits
+## Notes
 
-- All processing is local in the browser (no backend service required).
-- Very large files may be limited by browser memory.
-- Persistent storage may fall back to in-memory mode depending on browser support.
+- All processing stays in the browser -- no server calls.
+- Very large files may bump up against browser memory limits.
+- Persistent storage can fall back to in-memory mode depending on browser support.
 
 ## Deployment
 
-- See `docs/cloudflare-deployment.md` for Cloudflare deployment setup.
+See [`docs/cloudflare-deployment.md`](docs/cloudflare-deployment.md) for Cloudflare setup.
 
 ## Project Layout
 
-- `src/App.tsx` - main app state and orchestration
-- `src/components/` - UI components (`SankeyChart`, `DimensionManager`, `FlowDrillPanel`, `StatusFeed`)
-- `src/worker/` - DuckDB worker, protocol, and query builders
-- `docs/` - focused product/user-story notes
+| Path | Purpose |
+| --- | --- |
+| `src/App.tsx` | Main app state and orchestration |
+| `src/types.ts` | Shared TypeScript types |
+| `src/valueFormatting.ts` | Amount display formatting helpers |
+| `src/components/` | UI: `SankeyChart`, `DimensionManager`, `FlowDrillPanel`, `SheetPicker`, `StatusFeed` |
+| `src/features/import/` | Import pipeline: CSV pre-check, Excel preprocessing |
+| `src/services/` | `DuckDBWorkerClient` wrapper |
+| `src/worker/` | DuckDB web-worker, protocol, and query builders |
+| `docs/` | Feature stories and deployment notes |

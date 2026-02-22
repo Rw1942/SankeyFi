@@ -101,7 +101,6 @@ export interface SankeyRenderOptions {
   nodeWidth: number;
   nodePadding: number;
   chartHeightRatio: number;
-  labelGutterRatio: number;
   linkOpacity: number;
   labelFontSize: number;
 }
@@ -110,7 +109,6 @@ export const DEFAULT_SANKEY_RENDER_OPTIONS: SankeyRenderOptions = {
   nodeWidth: 14,
   nodePadding: 14,
   chartHeightRatio: 0.74,
-  labelGutterRatio: 0.125,
   linkOpacity: 0.35,
   labelFontSize: 11.5,
 };

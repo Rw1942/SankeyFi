@@ -64,8 +64,7 @@ const MIN_NODE_PADDING = 4;
 const MAX_NODE_PADDING = 44;
 const MIN_HEIGHT_RATIO = 0.35;
 const MAX_HEIGHT_RATIO = 0.9;
-const MIN_LABEL_GUTTER_RATIO = 0.08;
-const MAX_LABEL_GUTTER_RATIO = 0.22;
+const LABEL_GUTTER_RATIO = 0.125;
 const MIN_LINK_OPACITY = 0.08;
 const MAX_LINK_OPACITY = 1;
 const MIN_LABEL_FONT_SIZE = 9;
@@ -78,6 +77,17 @@ const OVERLAY_COLORS = ["#ef4444", "#f97316", "#eab308", "#22c55e", "#14b8a6", "
 
 const truncateLabel = (label: string): string => (label.length > MAX_LABEL_CHARS ? `${label.slice(0, MAX_LABEL_CHARS - 1)}…` : label);
 const clamp = (value: number, min: number, max: number): number => Math.max(min, Math.min(max, value));
+const stableHash = (value: string): number => {
+  let hash = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+  return hash;
+};
+const getCategoryColor = (label: string): string => {
+  if (label === "Other") return OTHER_COLOR;
+  return CATEGORY_COLORS[stableHash(label) % CATEGORY_COLORS.length];
+};
 const wrapLabel = (label: string, maxCharsPerLine: number): string[] => {
   const words = label.trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [label];
@@ -166,9 +176,8 @@ export const SankeyChart = ({
     ...renderOptions,
   };
   const chartHeightRatio = clamp(options.chartHeightRatio, MIN_HEIGHT_RATIO, MAX_HEIGHT_RATIO);
-  const labelGutterRatio = clamp(options.labelGutterRatio, MIN_LABEL_GUTTER_RATIO, MAX_LABEL_GUTTER_RATIO);
   const chartHeight = Math.max(MIN_CHART_HEIGHT, Math.min(MAX_CHART_HEIGHT, Math.round(chartWidth * chartHeightRatio)));
-  const labelGutter = Math.max(MIN_LABEL_GUTTER, Math.min(MAX_LABEL_GUTTER, Math.round(chartWidth * labelGutterRatio)));
+  const labelGutter = Math.max(MIN_LABEL_GUTTER, Math.min(MAX_LABEL_GUTTER, Math.round(chartWidth * LABEL_GUTTER_RATIO)));
   const edgeGutter = Math.round(labelGutter * EDGE_GUTTER_FACTOR);
   const nodeWidthOption = clamp(options.nodeWidth, MIN_NODE_WIDTH, MAX_NODE_WIDTH);
   const nodePaddingOption = clamp(options.nodePadding, MIN_NODE_PADDING, MAX_NODE_PADDING);
@@ -177,13 +186,6 @@ export const SankeyChart = ({
 
   const hasGraph = !!graph?.links.length;
   const halfWidth = chartWidth / 2;
-  const categoryColorByLabel = new Map<string, string>();
-  if (graph?.nodes.length) {
-    const labels = [...new Set(graph.nodes.map((node) => node.label))].sort((left, right) => left.localeCompare(right));
-    labels.forEach((label, index) => {
-      categoryColorByLabel.set(label, label === "Other" ? OTHER_COLOR : CATEGORY_COLORS[index % CATEGORY_COLORS.length]);
-    });
-  }
   const longestLabelLength = graph?.nodes.length ? Math.max(...graph.nodes.map((node) => node.label.length), 1) : 1;
   const maxWrappedChars = Math.min(MAX_WRAP_LINE_CHARS, Math.max(MIN_WRAP_LINE_CHARS, Math.floor(longestLabelLength * 0.5)));
 
@@ -257,23 +259,136 @@ export const SankeyChart = ({
       }
     });
 
-    const upstreamSeedIds = new Set<string>();
-    const downstreamSeedIds = new Set<string>();
     if (selectionFocus.kind === "link") {
       const selectedLink = linkByKey.get(selectionFocus.key);
-      if (selectedLink) {
-        upstreamSeedIds.add(selectedLink.source.id);
-        downstreamSeedIds.add(selectedLink.target.id);
+      if (!selectedLink) {
+        activePathLinkKeys = null;
+        selectedNodeIds = null;
+      } else {
+        const selectedSourceId = selectedLink.source.id;
+        const selectedTargetId = selectedLink.target.id;
+
+        const upstreamNodeIds = new Set<string>([selectedSourceId]);
+        const upstreamQueue = [selectedSourceId];
+        while (upstreamQueue.length) {
+          const nodeId = upstreamQueue.shift();
+          if (!nodeId) continue;
+          const incomingLinks = incomingByTarget.get(nodeId) ?? [];
+          for (const incoming of incomingLinks) {
+            if (!upstreamNodeIds.has(incoming.sourceId)) {
+              upstreamNodeIds.add(incoming.sourceId);
+              upstreamQueue.push(incoming.sourceId);
+            }
+          }
+        }
+
+        const downstreamNodeIds = new Set<string>([selectedTargetId]);
+        const downstreamQueue = [selectedTargetId];
+        while (downstreamQueue.length) {
+          const nodeId = downstreamQueue.shift();
+          if (!nodeId) continue;
+          const outgoingLinks = outgoingBySource.get(nodeId) ?? [];
+          for (const outgoing of outgoingLinks) {
+            if (!downstreamNodeIds.has(outgoing.targetId)) {
+              downstreamNodeIds.add(outgoing.targetId);
+              downstreamQueue.push(outgoing.targetId);
+            }
+          }
+        }
+
+        const upstreamStartIds = new Set<string>();
+        for (const nodeId of upstreamNodeIds) {
+          const hasIncomingWithinUpstream = (incomingByTarget.get(nodeId) ?? []).some((incoming) => upstreamNodeIds.has(incoming.sourceId));
+          if (!hasIncomingWithinUpstream) upstreamStartIds.add(nodeId);
+        }
+
+        const downstreamEndIds = new Set<string>();
+        for (const nodeId of downstreamNodeIds) {
+          const hasOutgoingWithinDownstream = (outgoingBySource.get(nodeId) ?? []).some((outgoing) => downstreamNodeIds.has(outgoing.targetId));
+          if (!hasOutgoingWithinDownstream) downstreamEndIds.add(nodeId);
+        }
+
+        const upstreamReachableFromStarts = new Set<string>();
+        const upstreamForwardQueue = [...upstreamStartIds];
+        while (upstreamForwardQueue.length) {
+          const nodeId = upstreamForwardQueue.shift();
+          if (!nodeId || upstreamReachableFromStarts.has(nodeId)) continue;
+          upstreamReachableFromStarts.add(nodeId);
+          const outgoingLinks = outgoingBySource.get(nodeId) ?? [];
+          for (const outgoing of outgoingLinks) {
+            if (upstreamNodeIds.has(outgoing.targetId)) upstreamForwardQueue.push(outgoing.targetId);
+          }
+        }
+
+        const upstreamCanReachSelectedSource = new Set<string>([selectedSourceId]);
+        const upstreamBackwardQueue = [selectedSourceId];
+        while (upstreamBackwardQueue.length) {
+          const nodeId = upstreamBackwardQueue.shift();
+          if (!nodeId) continue;
+          const incomingLinks = incomingByTarget.get(nodeId) ?? [];
+          for (const incoming of incomingLinks) {
+            if (upstreamNodeIds.has(incoming.sourceId) && !upstreamCanReachSelectedSource.has(incoming.sourceId)) {
+              upstreamCanReachSelectedSource.add(incoming.sourceId);
+              upstreamBackwardQueue.push(incoming.sourceId);
+            }
+          }
+        }
+
+        const downstreamReachableFromSelectedTarget = new Set<string>([selectedTargetId]);
+        const downstreamForwardQueue = [selectedTargetId];
+        while (downstreamForwardQueue.length) {
+          const nodeId = downstreamForwardQueue.shift();
+          if (!nodeId) continue;
+          const outgoingLinks = outgoingBySource.get(nodeId) ?? [];
+          for (const outgoing of outgoingLinks) {
+            if (downstreamNodeIds.has(outgoing.targetId) && !downstreamReachableFromSelectedTarget.has(outgoing.targetId)) {
+              downstreamReachableFromSelectedTarget.add(outgoing.targetId);
+              downstreamForwardQueue.push(outgoing.targetId);
+            }
+          }
+        }
+
+        const downstreamCanReachEnds = new Set<string>();
+        const downstreamBackwardQueue = [...downstreamEndIds];
+        while (downstreamBackwardQueue.length) {
+          const nodeId = downstreamBackwardQueue.shift();
+          if (!nodeId || downstreamCanReachEnds.has(nodeId)) continue;
+          downstreamCanReachEnds.add(nodeId);
+          const incomingLinks = incomingByTarget.get(nodeId) ?? [];
+          for (const incoming of incomingLinks) {
+            if (downstreamNodeIds.has(incoming.sourceId)) downstreamBackwardQueue.push(incoming.sourceId);
+          }
+        }
+
+        const validUpstreamNodeIds = new Set<string>();
+        for (const nodeId of upstreamNodeIds) {
+          if (upstreamReachableFromStarts.has(nodeId) && upstreamCanReachSelectedSource.has(nodeId)) validUpstreamNodeIds.add(nodeId);
+        }
+
+        const validDownstreamNodeIds = new Set<string>();
+        for (const nodeId of downstreamNodeIds) {
+          if (downstreamReachableFromSelectedTarget.has(nodeId) && downstreamCanReachEnds.has(nodeId)) validDownstreamNodeIds.add(nodeId);
+        }
+
+        const activeLinkKeys = new Set<string>([selectionFocus.key]);
+        const addValidLinksBetweenNodes = (allowedNodes: Set<string>) => {
+          layout.links.forEach((link, index) => {
+            const sourceId = link.source.id;
+            const targetId = link.target.id;
+            if (!allowedNodes.has(sourceId) || !allowedNodes.has(targetId)) return;
+            activeLinkKeys.add(buildLinkKey(link, index));
+          });
+        };
+
+        addValidLinksBetweenNodes(validUpstreamNodeIds);
+        addValidLinksBetweenNodes(validDownstreamNodeIds);
+
+        activePathLinkKeys = activeLinkKeys;
+        selectedNodeIds = new Set([...validUpstreamNodeIds, ...validDownstreamNodeIds]);
       }
     } else {
-      upstreamSeedIds.add(selectionFocus.nodeId);
-      downstreamSeedIds.add(selectionFocus.nodeId);
-    }
-
-    if (!upstreamSeedIds.size || !downstreamSeedIds.size) {
-      activePathLinkKeys = null;
-      selectedNodeIds = null;
-    } else {
+      const upstreamSeedIds = new Set<string>([selectionFocus.nodeId]);
+      const downstreamSeedIds = new Set<string>([selectionFocus.nodeId]);
       const upstreamLinkKeys = new Set<string>();
       const upstreamNodeIds = new Set<string>(upstreamSeedIds);
       const upstreamQueue = [...upstreamSeedIds];
@@ -307,9 +422,6 @@ export const SankeyChart = ({
       }
 
       activePathLinkKeys = new Set([...upstreamLinkKeys, ...downstreamLinkKeys]);
-      if (selectionFocus.kind === "link") {
-        activePathLinkKeys.add(selectionFocus.key);
-      }
       selectedNodeIds = new Set([...upstreamNodeIds, ...downstreamNodeIds]);
     }
   }
@@ -327,7 +439,7 @@ export const SankeyChart = ({
       const isLastColumn = nodeLayer === maxLayer;
 
       if (isFirstColumn || isLastColumn) {
-        flowThroughColor = categoryColorByLabel.get(clickedNode.label) ?? CATEGORY_COLORS[0];
+        flowThroughColor = getCategoryColor(clickedNode.label);
         const flowByLink = new Map<string, number>();
 
         const incomingByNode = new Map<string, RenderLink[]>();
@@ -564,29 +676,28 @@ export const SankeyChart = ({
                 <path
                   key={linkKey}
                   d={linkPath(link) ?? ""}
-                  stroke={categoryColorByLabel.get(link.source.label) ?? CATEGORY_COLORS[0]}
+                  stroke={getCategoryColor(link.source.label)}
                   strokeWidth={computedStrokeWidth}
                   strokeOpacity={computedOpacity}
                   style={{ cursor: "pointer", transition: "stroke-opacity 150ms ease, stroke-width 150ms ease" }}
                   onClick={(event) => {
                     event.stopPropagation();
-                    setSelectionFocus((current) => {
-                      const nextFocus = current?.kind === "link" && current.key === linkKey ? null : { kind: "link" as const, key: linkKey };
-                      onTraceSelectionChange?.(
-                        nextFocus
-                          ? {
-                              kind: "link",
-                              step: link.step,
-                              sourceId: link.source.id,
-                              targetId: link.target.id,
-                              sourceLabel: link.source.label,
-                              targetLabel: link.target.label,
-                              value: link.value,
-                            }
-                          : null,
-                      );
-                      return nextFocus;
-                    });
+                    const nextFocus =
+                      selectionFocus?.kind === "link" && selectionFocus.key === linkKey ? null : { kind: "link" as const, key: linkKey };
+                    setSelectionFocus(nextFocus);
+                    onTraceSelectionChange?.(
+                      nextFocus
+                        ? {
+                            kind: "link",
+                            step: link.step,
+                            sourceId: link.source.id,
+                            targetId: link.target.id,
+                            sourceLabel: link.source.label,
+                            targetLabel: link.target.label,
+                            value: link.value,
+                          }
+                        : null,
+                    );
                   }}
                 >
                   <title>
@@ -661,18 +772,17 @@ export const SankeyChart = ({
               const textX = labelOnRight ? x + nodeWidth + LABEL_OFFSET : x - LABEL_OFFSET;
               const textAnchor = labelOnRight ? "start" : "end";
               const wrappedLabel = wrapLabel(node.label, maxWrappedChars);
-              const nodeColor = categoryColorByLabel.get(node.label) ?? CATEGORY_COLORS[0];
+              const nodeColor = getCategoryColor(node.label);
               const hasSelection = !!selectedNodeIds || !!explicitPathKeySet;
               const isConnectedToSelection = !!selectedNodeIds?.has(node.id);
               const nodeOpacity = hasSelection ? (isConnectedToSelection ? ACTIVE_NODE_OPACITY : FADED_NODE_OPACITY) : 1;
 
               const handleNodeClick = (event: React.MouseEvent) => {
                 event.stopPropagation();
-                setSelectionFocus((current) => {
-                  const nextFocus = current?.kind === "node" && current.nodeId === node.id ? null : { kind: "node" as const, nodeId: node.id };
-                  onTraceSelectionChange?.(nextFocus ? { kind: "node", nodeId: node.id, depth: node.depth, label: node.label } : null);
-                  return nextFocus;
-                });
+                const nextFocus =
+                  selectionFocus?.kind === "node" && selectionFocus.nodeId === node.id ? null : { kind: "node" as const, nodeId: node.id };
+                setSelectionFocus(nextFocus);
+                onTraceSelectionChange?.(nextFocus ? { kind: "node", nodeId: node.id, depth: node.depth, label: node.label } : null);
               };
 
               return (

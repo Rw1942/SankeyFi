@@ -1,4 +1,4 @@
-# Cloudflare Deployment Guide
+# Cloudflare Deployment
 
 Sankeyfi is deployed as a **Cloudflare Worker with Static Assets** at:
 
@@ -6,19 +6,19 @@ Sankeyfi is deployed as a **Cloudflare Worker with Static Assets** at:
 
 ## Prerequisites
 
-- Node.js and npm
-- Cloudflare account
-- Wrangler CLI (installed as a dev dependency: `npm install -D wrangler`)
+- Node.js + npm
+- A Cloudflare account
+- Wrangler CLI (already a dev dependency -- `npm install` covers it)
 
-## Architecture
+## How It Works
 
-The project is a React + Vite SPA that builds to static files in `dist/`. It's deployed using Cloudflare's **Workers Static Assets** approach (the modern replacement for Cloudflare Pages).
+The app is a React + Vite SPA that builds to `dist/`. Cloudflare serves those static files from its edge network.
 
-DuckDB WASM binaries (~34MB and ~39MB each) exceed Cloudflare's 25 MiB per-file asset limit. To work around this, the WASM files are loaded from the **jsDelivr CDN** at runtime instead of being bundled into `dist/`. The smaller DuckDB JavaScript worker files (~773KB, ~845KB) are still bundled locally.
+DuckDB's WASM binaries (~34 MB each) exceed Cloudflare's 25 MiB per-file limit, so they're loaded from the **jsDelivr CDN** at runtime. The smaller DuckDB JS workers (~800 KB each) are still bundled locally.
 
-### Key configuration
+### Key Config
 
-**`wrangler.toml`** — Cloudflare deployment config:
+**`wrangler.toml`**
 
 ```toml
 name = "sankeyfi"
@@ -29,86 +29,59 @@ directory = "./dist"
 not_found_handling = "single-page-application"
 ```
 
-- `name`: The Worker name (determines the `*.workers.dev` subdomain)
-- `compatibility_date`: Cloudflare Workers API compatibility date
-- `assets.directory`: Points to the Vite build output
-- `not_found_handling`: Set to `single-page-application` so all routes serve `index.html` (required for client-side routing in an SPA)
+- `not_found_handling = "single-page-application"` makes all routes serve `index.html` (required for client-side routing).
 
-**`src/worker/duckdbWorker.ts`** — WASM loaded from CDN:
+**`src/worker/duckdbWorker.ts`** -- CDN WASM URLs:
 
 ```typescript
 const DUCKDB_VERSION = "1.33.1-dev18.0";
 const CDN_BASE = `https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@${DUCKDB_VERSION}/dist`;
-const duckdbWasmMvp = `${CDN_BASE}/duckdb-mvp.wasm`;
-const duckdbWasmEh = `${CDN_BASE}/duckdb-eh.wasm`;
 ```
 
-## Deploy commands
-
-### First-time setup
+## First-Time Setup
 
 ```bash
-# Install dependencies (includes wrangler as dev dependency)
 npm install
-
-# Log in to Cloudflare (opens browser for OAuth)
-npx wrangler login
-
-# Verify login
-npx wrangler whoami
+npx wrangler login      # opens browser for OAuth
+npx wrangler whoami      # verify login
 ```
 
-### Build and deploy
+## Build and Deploy
 
 ```bash
-# Build the project (TypeScript check + Vite production build)
-npm run build
-
-# Deploy to Cloudflare
-npx wrangler deploy
+npm run build            # TypeScript check + Vite production build
+npx wrangler deploy      # upload dist/ and deploy
 ```
 
-The `wrangler deploy` command reads `wrangler.toml`, uploads the `dist/` directory as static assets, and deploys the Worker. The site is served from Cloudflare's global edge network.
-
-### Preview deployments
-
-To deploy a preview (non-production) version:
+### Preview Deploy
 
 ```bash
 npx wrangler deploy --name sankeyfi-preview
 ```
 
-### Local development
+### Local Dev
 
 ```bash
-# Standard Vite dev server
-npm run dev
-
-# Or use Wrangler's local dev (simulates Cloudflare environment)
-npx wrangler dev
+npm run dev              # standard Vite dev server
+npx wrangler dev         # simulates Cloudflare locally
 ```
 
-## Updating DuckDB version
+## Updating DuckDB
 
-If you update the `@duckdb/duckdb-wasm` npm package version, also update the `DUCKDB_VERSION` constant in `src/worker/duckdbWorker.ts` to match, so the CDN-served WASM files stay in sync with the bundled JavaScript.
+When you bump `@duckdb/duckdb-wasm` in `package.json`, also update `DUCKDB_VERSION` in `src/worker/duckdbWorker.ts` so the CDN WASM files stay in sync with the bundled JS.
 
-## Cloudflare limits
+## Cloudflare Limits
 
 | Resource | Limit |
 | --- | --- |
 | Asset file size | 25 MiB per file |
-| Total asset files | 20,000 files |
-| Static asset requests | Free (no charge) |
+| Total asset files | 20,000 |
+| Static asset requests | Free |
 
-## Useful commands
+## Useful Commands
 
 ```bash
-# Check deployment status
-npx wrangler deployments list
-
-# Tail live logs
-npx wrangler tail
-
-# Delete the Worker
-npx wrangler delete
+npx wrangler deployments list   # check deployment status
+npx wrangler tail               # tail live logs
+npx wrangler delete             # delete the Worker
 ```

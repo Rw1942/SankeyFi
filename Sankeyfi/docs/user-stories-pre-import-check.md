@@ -1,7 +1,9 @@
-## User Stories
+# CSV Import Pre-Check
 
-- As an analyst importing large CSV files, I want a fast pre-import quality check so I can catch likely formatting issues before waiting through a long import.
-- As a user, I want import warnings/errors reported in the existing status area so I can understand what happened without searching elsewhere in the UI.
-- As a user, I want safe files to continue importing automatically after the pre-check so I can keep my workflow fast.
-- As a user, I want risky files (for example, malformed quoted values or severe column mismatches) blocked before import so I can fix the source file first.
-- As a maintainer, I want pre-check logic split into a focused module so `App.tsx` stays easier to evolve as import capabilities grow.
+## Goals
+
+- Run a fast quality check before importing large CSV files so formatting issues surface early.
+- Report warnings and errors in the existing status area -- no hunting around the UI.
+- Auto-continue importing when the file looks clean, keeping the workflow fast.
+- Block risky files (e.g. malformed quoting, severe column mismatches) so you can fix the source before wasting time.
+- Pre-check logic lives in `src/features/import/csvPrecheck.ts` to keep `App.tsx` focused.

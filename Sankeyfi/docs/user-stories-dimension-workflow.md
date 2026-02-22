@@ -1,7 +1,9 @@
-## User Stories
+# Dimension Selection and Ordering
 
-- As a user, I want to quickly select dimensions with checkboxes so I can focus on only the columns I care about.
-- As a user, I want to see sample values for each dimension next to selection controls so I can validate that a dimension is meaningful before running Sankey.
-- As a user, I want selected dimensions shown in a table so I can review my stage configuration in one clear place.
-- As a user, I want to reorder selected dimensions in that table so I can control Sankey stage order without guessing.
-- As a maintainer, I want the dimension UI logic encapsulated in a dedicated component so the main app remains simple and easier to test.
+## Goals
+
+- Quick checkbox selection so you can focus on only the columns you care about.
+- Sample values shown next to each dimension so you can tell if a column is useful before running the Sankey.
+- Selected dimensions displayed in a table for a clear overview of your stage configuration.
+- Drag-to-reorder in that table so you control stage order without guessing.
+- Dimension UI logic lives in a dedicated `DimensionManager` component to keep `App.tsx` lean.

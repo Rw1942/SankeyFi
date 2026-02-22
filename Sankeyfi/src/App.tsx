@@ -8,6 +8,7 @@ import { SheetPicker } from "./components/SheetPicker";
 import { isDelimitedTextFile, runCsvPrecheck } from "./features/import/csvPrecheck";
 import { isExcelFile, parseXlsxFile, sheetToCsvBytes, type XlsxParseResult } from "./features/import/xlsxPreprocess";
 import { DuckDBWorkerClient } from "./services/duckdbClient";
+import mushroomsCsv from "../mushrooms_user_friendly.csv?raw";
 import type {
   AmountDataType,
   ColumnInfo,
@@ -63,6 +64,7 @@ const isLikelyNumeric = (column: ColumnInfo, preview: PreviewResult | null): boo
   const numericLikeCount = candidates.filter((value) => NUMERIC_VALUE_REGEX.test(value.trim())).length;
   return numericLikeCount / candidates.length >= 0.75;
 };
+const MAX_DEFAULT_DIMS = 5;
 const pickDefaultDimensions = (columns: ColumnInfo[], preview: PreviewResult, profiles: ColumnProfile[]): string[] => {
   const profileByName = new Map(profiles.map((profile) => [profile.columnName, profile]));
   const qualified = columns
@@ -84,15 +86,29 @@ const pickDefaultDimensions = (columns: ColumnInfo[], preview: PreviewResult, pr
       return left.index - right.index;
     });
 
-  const selected = qualified.slice(0, 3).map(({ column }) => column.name);
-  if (selected.length >= 3) return selected;
+  const picked = qualified.slice(0, MAX_DEFAULT_DIMS);
 
-  const selectedSet = new Set(selected);
-  const fallback = columns
-    .map((column) => column.name)
-    .filter((name) => !selectedSet.has(name))
-    .slice(0, 3 - selected.length);
-  return [...selected, ...fallback];
+  if (picked.length < MAX_DEFAULT_DIMS) {
+    const selectedSet = new Set(picked.map(({ column }) => column.name));
+    for (const column of columns) {
+      if (picked.length >= MAX_DEFAULT_DIMS) break;
+      if (selectedSet.has(column.name)) continue;
+      if (isLikelyNumeric(column, preview)) continue;
+      picked.push({ column, profile: profileByName.get(column.name), index: columns.indexOf(column) });
+      selectedSet.add(column.name);
+    }
+  }
+
+  picked.sort((left, right) => (left.profile?.distinctCount ?? 0) - (right.profile?.distinctCount ?? 0));
+
+  const result = new Array<typeof picked[number]>(picked.length);
+  let lo = 0;
+  let hi = picked.length - 1;
+  for (let i = 0; i < picked.length; i++) {
+    result[i % 2 === 0 ? lo++ : hi--] = picked[i];
+  }
+
+  return result.map(({ column }) => column.name);
 };
 
 function App() {
@@ -156,7 +172,40 @@ function App() {
         if (initResult.persistence === "memory") {
           pushStatus("Persistent storage unavailable in this session; using in-memory mode.");
         }
-        pushStatus("Ready. Import a CSV, Parquet, or Excel file to begin.");
+
+        pushStatus("Loading default dataset...");
+        try {
+          const bytes = new TextEncoder().encode(mushroomsCsv).buffer as ArrayBuffer;
+          const imported = await importCsvBytes("mushrooms_user_friendly.csv", bytes, initResult.persistence);
+          if (!isMounted) return;
+          const defaultDims = await applyImportResult(imported.columns, imported.preview);
+          if (!isMounted) return;
+
+          const defaultTopN = buildTopNMap(defaultDims);
+          const defaultTraceColumn = imported.columns[0]?.name ?? defaultDims[0] ?? "Class";
+          const defaultTraceKey = { mode: "single" as const, column: defaultTraceColumn };
+          setTraceIdColumn(defaultTraceColumn);
+          setIsBusy(true);
+          pushStatus("Computing Sankey links...");
+          const result = await client.call("computeSankey", {
+            dims: defaultDims,
+            mode: "count",
+            amountCol: "",
+            topNByDimension: defaultTopN,
+            sortOrder: "largest_flow",
+            traceKeyConfig: defaultTraceKey,
+            includeTrace: true,
+          });
+          if (!isMounted) return;
+          setGraph(result);
+          setGraphRevision((r) => r + 1);
+          pushStatus(`Sankey ready: ${result.nodes.length} nodes, ${result.links.length} links.`);
+        } catch (demoError) {
+          console.warn("Failed to load sample dataset.", demoError);
+          if (isMounted) pushStatus("Ready. Import a CSV, Parquet, or Excel file to begin.");
+        } finally {
+          if (isMounted) setIsBusy(false);
+        }
       } catch (error) {
         const message = error instanceof Error ? error.message : "Initialization failed.";
         if (isMounted) pushStatus(message);
@@ -184,10 +233,18 @@ function App() {
     });
   }, [columns]);
 
-  const applyImportResult = async (resultColumns: ColumnInfo[], resultPreview: PreviewResult) => {
+  const applyImportResult = async (resultColumns: ColumnInfo[], resultPreview: PreviewResult): Promise<string[]> => {
+    // Clear trace/drill state because imported datasets can change schema.
+    setActiveTraceSelection(null);
+    setTraceResult(null);
+    setSingleRecordTrace(null);
+    setOverlayRecordIds([]);
+    setOverlaySegments([]);
+    setOverlaySelectionTruncated(false);
+
     setColumns(resultColumns);
     setPreview(resultPreview);
-    let initialDims = resultColumns.slice(0, 3).map((column) => column.name);
+    let initialDims = resultColumns.slice(0, MAX_DEFAULT_DIMS).map((column) => column.name);
     try {
       const profiles = await client.call("profileColumns", undefined);
       initialDims = pickDefaultDimensions(resultColumns, resultPreview, profiles);
@@ -205,6 +262,7 @@ function App() {
     setTraceIdColumn(resultColumns[0]?.name ?? "");
     setTraceCompositeColumns(resultColumns.slice(0, Math.min(2, resultColumns.length)).map((column) => column.name));
     pushStatus("Data imported. Configure dimensions and run Sankey.");
+    return initialDims;
   };
 
   const importCsvBytes = async (
@@ -739,21 +797,6 @@ function App() {
                 step={0.01}
                 value={renderOptions.chartHeightRatio}
                 onChange={(event) => updateRenderOption("chartHeightRatio", Number(event.target.value), 0.35, 0.9, 2)}
-              />
-            </label>
-            <label className="values-field diagram-option-field">
-              <div className="diagram-option-head">
-                <span>Label gutter ratio</span>
-                <strong>{formatOptionValue(renderOptions.labelGutterRatio, 2)}</strong>
-              </div>
-              <input
-                className="diagram-slider"
-                type="range"
-                min={0.08}
-                max={0.22}
-                step={0.01}
-                value={renderOptions.labelGutterRatio}
-                onChange={(event) => updateRenderOption("labelGutterRatio", Number(event.target.value), 0.08, 0.22, 2)}
               />
             </label>
             <label className="values-field diagram-option-field">
