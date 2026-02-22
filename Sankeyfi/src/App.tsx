@@ -642,7 +642,7 @@ function App() {
       <header className="app-header">
         <div>
           <h1>Sankeyfi</h1>
-          <p>Fast, in-browser Sankey builder powered by DuckDB-Wasm.</p>
+          <p>Build Sankey charts in your browser with DuckDB-Wasm.</p>
         </div>
         <span className={`pill ${persistence === "opfs" ? "pill-ok" : "pill-warn"}`}>
           Persistence: {persistence.toUpperCase()}
@@ -658,7 +658,7 @@ function App() {
           multiple
           onChange={(e) => void importFiles(e.target.files)}
         />
-        <p className="hint">Drop one or more files (CSV, Parquet, or Excel). The latest import becomes the active dataset.</p>
+        <p className="hint">Drop one or more files (CSV, Parquet, or Excel). Your most recent import becomes the active dataset.</p>
         {pendingXlsx && (
           <SheetPicker
             fileName={pendingXlsx.fileName}
@@ -837,7 +837,7 @@ function App() {
 
       <section className="panel">
         <h2>Values</h2>
-        <p className="hint">Choose how link values are calculated and how stages should be interpreted.</p>
+        <p className="hint">Choose how link values are calculated and how stages are interpreted.</p>
         <div className="values-layout">
           <div className="values-section">
             <h3>1) Value Calculation</h3>

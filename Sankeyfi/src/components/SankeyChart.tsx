@@ -316,7 +316,7 @@ export const SankeyChart = ({
 
   let flowThroughActive = false;
   let flowThroughColor: string | null = null;
-  let flowThroughPaths: Array<{ d: string; strokeWidth: number; flowValue: number; linkValue: number }> = [];
+  const flowThroughPaths: Array<{ d: string; strokeWidth: number; flowValue: number; linkValue: number }> = [];
 
   if (selectionFocus?.kind === "node" && layout && !explicitPathKeySet) {
     const clickedNode = layout.nodes.find((n) => n.id === selectionFocus.nodeId);

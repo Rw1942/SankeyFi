@@ -35,7 +35,7 @@ export const FlowDrillPanel = ({
     return (
       <section className="panel">
         <h2>Trace Drill-Down</h2>
-        <p className="hint">Click a flow or node label in the chart to inspect contributing records.</p>
+        <p className="hint">Click a flow or node in the chart to inspect contributing records.</p>
       </section>
     );
   }
@@ -72,15 +72,15 @@ export const FlowDrillPanel = ({
           </div>
           <div className="controls-row">
             <button className="secondary-button" type="button" onClick={() => onApplyOverlay(suggestedRecordIds)}>
-              Overlay top {suggestedRecordIds.length} record lines
+              Highlight top {suggestedRecordIds.length} record paths
             </button>
             <button className="secondary-button" type="button" onClick={() => onApplyOverlay([])}>
-              Clear line overlay
+              Clear path highlight
             </button>
           </div>
           {overlayRecordIds.length ? (
             <p className="hint">
-              Showing overlay lines for {overlayRecordIds.length} record{overlayRecordIds.length === 1 ? "" : "s"}.
+              Showing highlighted paths for {overlayRecordIds.length} record{overlayRecordIds.length === 1 ? "" : "s"}.
             </p>
           ) : null}
           {overlaySelectionTruncated ? (
