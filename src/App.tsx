@@ -8,7 +8,7 @@ import { SheetPicker } from "./components/SheetPicker";
 import { isDelimitedTextFile, runCsvPrecheck } from "./features/import/csvPrecheck";
 import { isExcelFile, parseXlsxFile, sheetToCsvBytes, type XlsxParseResult } from "./features/import/xlsxPreprocess";
 import { DuckDBWorkerClient } from "./services/duckdbClient";
-import mushroomsCsv from "../mushrooms_user_friendly.csv?raw";
+import mushroomsCsv from "./data/mushrooms_user_friendly.csv?raw";
 import type {
   AmountDataType,
   ColumnInfo,
