@@ -42,9 +42,11 @@ const CDN_BASE = `https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@${DUCKDB_VERS
 
 ```bash
 npm install
-npx wrangler login      # opens browser for OAuth
-npx wrangler whoami      # verify login
+export CLOUDFLARE_API_TOKEN=...   # Wrangler reads the token from the environment
+npx wrangler whoami               # verify the token and account
 ```
+
+`npx wrangler login` (browser OAuth) also works for an interactive session on your own machine.
 
 ## Build and Deploy
 
